@@ -6,7 +6,7 @@ namespace BookStore
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			DB_Products baseDB = new DB_Products();
 		}
 	}
 }

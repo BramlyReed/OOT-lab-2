@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HomeWorkOOP2
+namespace BookStore
 {
 	enum Format
 	{
@@ -39,20 +39,37 @@ namespace HomeWorkOOP2
 		public string author { get; }
 		public double price;
 		public Format type { get; }
-		public DateTime yearOfCreation { get; }
+		public uint yearOfCreation { get; }
 		public Genre genre { get; }
 		public PublishingHouse publishing { get; }
+		public uint yearOfPublish { get; }
 
 
-		public Book(string name_value, string author_value, double price_value, Format typeBook, DateTime year, Genre genre_value, PublishingHouse publishing_value)
+		public Book(string name_value, string author_value, double price_value, Format typeBook, uint year, Genre genre_value, PublishingHouse publishing_value, uint yearPublish)
 		{
-			name = name_value;
-			author = author_value;
-			price = price_value;
-			type = typeBook;
-			yearOfCreation = year;
-			genre = genre_value;
-			publishing = publishing_value;
+			if (yearPublish < year)
+			{
+				Console.WriteLine("Год публикции издания не должен быть меньше года написания книги");
+			}
+			else
+			{
+				name = name_value;
+				author = author_value;
+				price = price_value;
+				type = typeBook;
+				yearOfCreation = year;
+				genre = genre_value;
+				publishing = publishing_value;
+				yearOfPublish = yearPublish;
+			}
+		}
+
+		public void ChangePrice(double newPrice)
+		{
+			if (newPrice != price)
+			{
+				price = newPrice;
+			}
 		}
 	}
 }
