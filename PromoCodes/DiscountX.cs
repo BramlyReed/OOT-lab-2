@@ -4,10 +4,10 @@ using System.Text;
 
 namespace BookStore.PromoCodes
 {
-	class DiscountXRubles: PromoCodeInterface
+	class DiscountXR: PromoCodeInterface
 	{
 		uint rubles = 0;
-		public DiscountXRubles(uint rubles)
+		public DiscountXR(uint rubles)
 		{
 			this.rubles = rubles;
 		}
@@ -17,16 +17,16 @@ namespace BookStore.PromoCodes
 		}
 	}
 
-	class DiscountXPercent: PromoCodeInterface
+	class DiscountXP: PromoCodeInterface
 	{
 		uint percents = 0;
-		public DiscountXPercent(uint percents)
+		public DiscountXP(uint percents)
 		{
 			this.percents = percents;
 		}
 		public void applyPromoCode(Order order)
 		{
-			
+			order.discount = (order.cost / 100) * percents;
 		}
 	}
 }

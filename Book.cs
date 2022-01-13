@@ -35,14 +35,14 @@ namespace BookStore
 
 	class Book
 	{
-		public string name { get; }
-		public string author { get; }
+		public readonly string name;
+		public readonly string author;
 		public double price;
-		public Format type { get; }
-		public uint yearOfCreation { get; }
-		public Genre genre { get; }
-		public PublishingHouse publishing { get; }
-		public uint yearOfPublish { get; }
+		public readonly Format type;
+		public readonly uint yearOfCreation;
+		public readonly Genre genre;
+		public readonly PublishingHouse publishing;
+		public readonly uint yearOfPublish;
 
 
 		public Book(string name_value, string author_value, double price_value, Format typeBook, uint year, Genre genre_value, PublishingHouse publishing_value, uint yearPublish)

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BookStore.PromoCodes
+namespace BookStore
 {
-	class PromoCodeInterface
+	interface PromoCodeInterface
 	{
 		void applyPromoCode(Order order);
 	}

@@ -4,16 +4,19 @@ using System.Text;
 
 namespace BookStore.PromoCodes
 {
-	class FreeBook: PromoCodeInterface
+	class Free: PromoCodeInterface
 	{
 		Book book;
-		public FreeBook(Book book)
+		public Free(Book book)
 		{
 			this.book = book;
 		}
 		public void applyPromoCode(Order order)
 		{
-
+			if (order.books.Contains(book))
+			{
+				order.discount += book.price;
+			}
 		}
 	}
 
